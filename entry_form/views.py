@@ -4,3 +4,6 @@ from django.shortcuts import render
 
 def begin_entry(request):
     return render(request, "entry_form/begin_entry.html")
+
+def application(request):
+    pass
