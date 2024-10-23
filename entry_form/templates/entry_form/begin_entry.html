@@ -1,13 +1,31 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static "entry_form/card.css" %}">
+    <style>
+        a {
+            display: block;
+            margin: 9px 0;
+            padding: 0.375rem 0.75rem;
+            background-color: #3e8f3e;
+            background-image: linear-gradient(to bottom, #5cb85c 0, #419641 100%);
+            background-repeat: repeat-x;
+            border: 1px solid transparent;
+            border-radius: 0.25rem;
+            text-decoration: none;
+        }
+    </style>
+{% endblock %}
 
 {% block content %}
-    <div class="">
-        <header class="header">
+    <div class="card">
+        <div class="card-header">
             <p>Entry Form</p>
-        </header>
-        <div>
+        </div>
+        <div class="card-body">
             <p>The entry form is prepared in two parts, one for the primary Entrant and one for derivatives (if any). Each part must be completed correctly and completely before going to the next part. After all parts are completed, the entry will be submitted to the DV-2026 Processing Center. Click the link below to begin the entry process.</p>
-            
+            <a href="">Begin Entry</a>
         </div>
     </div>
 {% endblock %}
