@@ -41,6 +41,7 @@ class ApplicationForm(forms.Form):
     master_degree = forms.BooleanField()
     some_doctorate_level_courses = forms.BooleanField()
     doctorate_degree = forms.BooleanField()
+    unmarried = forms.BooleanField()
     married_not_usa = forms.BooleanField()
     married_is_usa = forms.BooleanField()
     divorced = forms.BooleanField()

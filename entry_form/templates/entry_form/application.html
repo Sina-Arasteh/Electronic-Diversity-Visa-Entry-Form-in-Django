@@ -1,10 +1,188 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block style %}
+    <link rel="stylesheet" href="{% static "entry_form/card.css" %}">
+{% endblock %}
+
 {% block content %}
     <form>
         {% csrf_token %}
-        {{ form }}
+
+        <div class="card">
+            <div class="card-header">
+                <h4>1. Name</h4>
+            </div>
+            <div class="card-body">
+                {{ form.last_name.as_field_group }}
+                {{ form.first_name.as_field_group }}
+                {{ form.no_first_name.as_field_group }}
+                {{ form.middle_name.as_field_group }}
+                {{ form.no_middle_name.as_field_group }}
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <h4>2. Gender</h4>
+            </div>
+            <div class="card-body">
+                {{ form.gender_male.as_field_group }}
+                {{ form.gender_female.as_field_group }}
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h4>3. Birth Date</h4>
+            </div>
+            <div class="card-body">
+                {{ form.birth_month.as_field_group }}
+                {{ form.birth_day.as_field_group }}
+                {{ form.birth_year.as_field_group }}
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h4>4. City Where You Were Born</h4>
+            </div>
+            <div class="card-body">
+                <p>Enter Birth City Only. Do not enter District/County/Province/State.</p>
+                {{ form.birth_city.as_field_group }}
+                {{ form.unknown_birth_city.as_field_group }}
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h4>5. Country Where You Were Born</h4>
+            </div>
+            <div class="card-body">
+                {{ form.birth_country.as_field_group }}
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h4>6. Country of Eligibility for the DV Program</h4>
+            </div>
+            <div class="card-body">
+                <p>Your country of eligibility will normally be the same as your country of birth. Your country of eligibility is NOT related to where you live. If you were born in a country that is not eligible for the DV program, please go to <a href="" target="_blank">Explanation of Country of Eligibility</a> to see if there is another option available in your case.</p>
+                {{ form.eligibility_country_yes.as_field_group }}
+                {{ form.eligibility_country_no.as_field_group }}
+                {{ form.eligibility_country.as_field_group }}
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h4>7. Entrant Photograph</h4>
+            </div>
+            <div class="card-body">
+                <p>Photographs must be submitted at the time of eDV entry. Photographs that do not comply with all specifications, including but not limited to recency of the photos (must be taken in the last six months), composition of the photos, and unacceptable backgrounds are grounds for disqualification of the entire entry. Any manipulation of photographs that alters the facial characteristics is grounds for disqualification of the entire entry. See examples on the <a href="" target="_blank">Photo Examples</a> page.</p>
+                <p>Please refer to the Instructions for the 2026 Diversity Immigrant Visa program (DV-2026) for technical specifications and compositional specifications for the digital image.</p>
+                <p>You will use one of the following methods to enter the image into eDV:
+                    <ul>
+                        <li>Take a new digital image.</li>
+                        <li>Use a digital scanner to scan a recent photograph.</li>
+                    </ul>
+                    <p><a href="" target="_blank">Link to Photo Instructions/Photo Examples page</a></p>
+                </p>
+                {{ form.photo.as_field_group }}
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h4>8. Mailing Address</h4>
+            </div>
+            <div class="card-body">
+                {{ form.mailing_address_in_care_of.as_field_group }}
+                {{ form.mailing_address_line_1.as_field_group }}
+                {{ form.mailing_address_line_2.as_field_group }}
+                {{ form.mailing_address_city.as_field_group }}
+                {{ form.mailing_address_provence.as_field_group }}
+                {{ form.mailing_address_postal_code.as_field_group }}
+                {{ form.no_postal_code.as_field_group }}
+                {{ form.mailing_address_country.as_field_group }}
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h4>9. Country Where You Live Today</h4>
+            </div>
+            <div class="card-body">
+                {{ form.resident_country.as_field_group }}
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h4>10. Phone Number</h4>
+            </div>
+            <div class="card-body">
+                {{ form.phone.as_field_group }}
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h4>11. E-mail Address</h4>
+            </div>
+            <div class="card-body">
+                {{ form.email.as_field_group }}
+                {{ form.email_confirmation.as_field_group }}
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h4>12. What is the highest level of education you have achieved, as of today?</h4>
+            </div>
+            <div class="card-body">
+                {{ form.primary_school_only.as_field_group }}
+                {{ form.high_school_no_degree.as_field_group }}
+                {{ form.high_school_degree.as_field_group }}
+                {{ form.vocational_school.as_field_group }}
+                {{ form.some_university_courses.as_field_group }}
+                {{ form.university_degree.as_field_group }}
+                {{ form.some_graduate_level_courses.as_field_group }}
+                {{ form.master_degree.as_field_group }}
+                {{ form.some_doctorate_level_courses.as_field_group }}
+                {{ form.doctorate_degree.as_field_group }}
+                <p>You must have a minimum of a high school diploma reflecting the completion of a full course of study (vocation schools or equivalency degrees are not acceptable) or be a skilled worker in an occupation that requires at least two years of training or experience to qualify (visit <a href="" target="_blank">http://www.onetonline.org/</a> to see if your occupation qualifies) for a Diversity Visa.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h4>13. What is your current marital status?</h4>
+            </div>
+            <div class="card-body">
+                {{ form.unmarried.as_field_group }}
+                {{ form.married_not_usa.as_field_group }}
+                {{ form.married_is_usa.as_field_group }}
+                {{ form.divorced.as_field_group }}
+                {{ form.widowed.as_field_group }}
+                {{ form.legally_separated.as_field_group }}
+                {{ form.spouse_information.as_field_group }}
+                <p>Legal separation is an arrangement when a couple remain married but live apart, following a court order. If you and your spouse are legally separated, your spouse will not be able to immigrate with you through the Diversity Visa program. You will not be penalized if you choose to enter the name of a spouse from whom you are legally separated.</p>
+                <p>If you are not legally separated by a court order, you must include your spouse even if you plan to be divorced before you apply for the Diversity Visa. Failure to list your eligible spouse is grounds for disqualification.</p>
+                <p>If your spouse is a U.S. citizen or Lawful Permanent Resident, do not list him/her in your entry.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h4>14. Number of Children</h4>
+            </div>
+            <div class="card-body">
+                {{ form.num_children.as_field_group }}
+                <p>Children include all biological children, legally adopted children, and stepchildren who are unmarried and under the age of 21 on the date you submit your entry. You must include all eligible children, even if they do not live with you or if they do not intend to apply for a Diversity Visa as your derivative. Failure to list all eligible children is grounds for disqualification. If your child is a U.S. citizen or Lawful Permanent Resident, do not list him/her in your entry.</p>
+            </div>
+        </div>
         <button type="submit">Continue</button>
     </form>
 {% endblock %}
