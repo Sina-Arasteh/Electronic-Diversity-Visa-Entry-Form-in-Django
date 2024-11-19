@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from . import forms
 
-# Create your views here.
 
 def begin_entry(request):
     return render(request, 'entry_form/begin_entry.html')

@@ -39,6 +39,12 @@
             <h4>2. Gender</h4>
         </div>
         <div class="card-body">
+            {% for radio in form.gender %}
+            {% if radio.id_for_label != "id_gender_0" %}
+                {{ radio.tag }}
+                {{ radio.choice_label }}
+            {% endif %}
+            {% endfor %}
         </div>
     </article>
     
@@ -46,7 +52,22 @@
         <div class="card-header">
             <h4>3. Birth Date</h4>
         </div>
-        <div class="card-body">
+        <div class="card-body flex-container">
+            <div>
+                {{ form.birth_month.label_tag }}
+                <br>
+                {{ form.birth_month }}
+            </div>
+            <div>
+                {{ form.birth_day.label_tag }}
+                <br>
+                {{ form.birth_day }}
+            </div>
+            <div>
+                {{ form.birth_year.label_tag }}
+                <br>
+                {{ form.birth_year }}
+            </div>
         </div>
     </article>
     
@@ -55,6 +76,11 @@
             <h4>4. City Where You Were Born</h4>
         </div>
         <div class="card-body">
+            <div>
+                {{ form.birth_city.label_tag }}
+                <br>
+                {{ form.birth_city }}
+            </div>
         </div>
     </article>
     
@@ -63,6 +89,11 @@
             <h4>5. Country Where You Were Born</h4>
         </div>
         <div class="card-body">
+            <div>
+                {{ form.birth_country.label_tag }}
+                <br>
+                {{ form.birth_country }}
+            </div>
         </div>
     </article>
     
@@ -71,6 +102,11 @@
             <h4>6. Country of Eligibility for the DV Program</h4>
         </div>
         <div class="card-body">
+            <div>
+                {{ form.eligibility_country.label_tag }}
+                <br>
+                {{ form.eligibility_country }}
+            </div>
         </div>
     </article>
     
@@ -79,6 +115,7 @@
             <h4>7. Entrant Photograph</h4>
         </div>
         <div class="card-body">
+            {{ form.entrant_photograph }}
         </div>
     </article>
     
@@ -87,6 +124,41 @@
             <h4>8. Mailing Address</h4>
         </div>
         <div class="card-body">
+            <div>
+                a. {{ form.mailing_address_in_care_of.label_tag }}
+                <br>
+                {{ form.mailing_address_in_care_of }}
+            </div>
+            <div>
+                b. {{ form.mailing_address_address_line_one.label_tag }}
+                <br>
+                {{ form.mailing_address_address_line_one }}
+            </div>
+            <div>
+                c. {{ form.mailing_address_address_line_two.label_tag }}
+                <br>
+                {{ form.mailing_address_address_line_two }}
+            </div>
+            <div>
+                d. {{ form.mailing_adress_city.label_tag }}
+                <br>
+                {{ form.mailing_adress_city }}
+            </div>
+            <div>
+                e. {{ form.mailing_adress_provence.label_tag }}
+                <br>
+                {{ form.mailing_adress_provence }}
+            </div>
+            <div>
+                f. {{ form.mailing_address_zip_code.label_tag }}
+                <br>
+                {{ form.mailing_address_zip_code }}
+            </div>
+            <div>
+                g. {{ form.mailing_address_country.label_tag }}
+                <br>
+                {{ form.mailing_address_country }}
+            </div>
         </div>
     </article>
     
@@ -95,6 +167,9 @@
             <h4>9. Country Where You Live Today</h4>
         </div>
         <div class="card-body">
+            <div>
+                {{ form.resident_country }}
+            </div>
         </div>
     </article>
     
@@ -103,6 +178,9 @@
             <h4>10. Phone Number</h4>
         </div>
         <div class="card-body">
+            <div>
+                {{ form.phone_number }}
+            </div>
         </div>
     </article>
     
@@ -111,6 +189,9 @@
             <h4>11. E-mail Address</h4>
         </div>
         <div class="card-body">
+            <div>
+                {{ form.e_mail }}
+            </div>
         </div>
     </article>
     
@@ -119,6 +200,14 @@
             <h4>12. What is the highest level of education you have achieved, as of today?</h4>
         </div>
         <div class="card-body">
+            {% for radio in form.education_level %}
+            {% if radio.id_for_label != "id_education_level_0" %}
+                <div>
+                    {{ radio.tag }}
+                    {{ radio.choice_label }}
+                </div>
+            {% endif %}
+            {% endfor %}
         </div>
     </article>
     
@@ -127,6 +216,15 @@
             <h4>13. What is your current marital status?</h4>
         </div>
         <div class="card-body">
+            {% for radio in form.marital_status %}
+            {% if radio.id_for_label != "id_marital_status_0" %}
+                <div>
+                    <!-- {{ radio.id_for_label }} -->
+                    {{ radio.tag }}
+                    {{ radio.choice_label }}
+                </div>
+            {% endif %}
+            {% endfor %}
         </div>
     </article>
     
@@ -135,6 +233,9 @@
             <h4>14. Number of Children</h4>
         </div>
         <div class="card-body">
+            <div>
+                {{ form.number_of_children }}
+            </div>
         </div>
     </article>
 </form>
