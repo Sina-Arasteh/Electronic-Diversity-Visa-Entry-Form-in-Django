@@ -3,18 +3,34 @@
 
 {% block head %}
     <meta name="description" content="The DV-202X Entry Form.">
-    <link rel="stylesheet" href="{% static "entry_form/article.css" %}">
+    <link rel="stylesheet" href="{% static "entry_form/articles.css" %}">
 {% endblock %}
 
 {% block body %}
+<h1>Part One - Entrant Information</h1>
 <form action="" method="POST">
     {% csrf_token %}
-    
+
     <article class="card">
         <div class="card-header">
             <h4>1. Name</h4>
         </div>
-        <div class="card-body">
+        <div class="card-body flex-container">
+            <div>
+                {{ form.last_name.label_tag }}
+                <br>
+                {{ form.last_name }}
+            </div>
+            <div>
+                {{ form.first_name.label_tag }}
+                <br>
+                {{ form.first_name }}
+            </div>
+            <div>
+                {{ form.middle_name.label_tag }}
+                <br>
+                {{ form.middle_name }}
+            </div>
         </div>
     </article>
     

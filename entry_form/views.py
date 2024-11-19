@@ -12,6 +12,6 @@ def entry_form(request):
 
     form = forms.EntrantForm()
     return render(request, "entry_form/entry_form.html", {
-        "form": form
+        "form": form,
     })    
 

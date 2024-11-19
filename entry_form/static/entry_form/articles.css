@@ -9,6 +9,10 @@ body {
     padding: 0 7%;
 }
 
+h1 {
+    text-align: center;
+}
+
 .card {
     margin-bottom: 1.25rem;
     border: 1px solid #00000020;
@@ -30,4 +34,14 @@ h4 {
     font-weight: 500;
 }
 
-.card-body {padding: 5px 20px;}
+.card-body {padding: 30px 20px 45px;}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+input {
+    font-size: 28px;
+}
