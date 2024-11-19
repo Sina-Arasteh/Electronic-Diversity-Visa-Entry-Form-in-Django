@@ -5,6 +5,10 @@
     <meta name="description" content="You want to sign up for the DV Visa? Start here.">
     <link rel="stylesheet" href="{% static "entry_form/article.css" %}">
     <style>
+        body {
+            text-align: center;
+        }
+        
         a {
             display: inline-block;
             margin: 9px 0;
@@ -32,7 +36,7 @@
         </div>
         <div class="card-body">
             <p>The entry form is prepared in two parts, one for the primary Entrant and one for derivatives (if any). Each part must be completed correctly and completely before going to the next part. After all parts are completed, the entry will be submitted to the DV-202X Processing Center. Click the link below to begin the entry process.</p>
-            <a href="">Begin Entry</a>
+            <a href="{% url "entry_form" %}">Begin Entry</a>
         </div>
     </article>
 {% endblock %}

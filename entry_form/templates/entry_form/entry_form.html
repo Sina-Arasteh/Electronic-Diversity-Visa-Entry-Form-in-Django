@@ -7,7 +7,9 @@
 {% endblock %}
 
 {% block body %}
-<form action="">
+<form action="" method="POST">
+    {% csrf_token %}
+    
     <article class="card">
         <div class="card-header">
             <h4>1. Name</h4>
